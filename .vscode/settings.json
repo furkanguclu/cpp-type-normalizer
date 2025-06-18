@@ -1,0 +1,11 @@
+{
+  "python.pythonPath": "python3",
+  "files.associations": {
+    "*.tpp": "cpp",
+    "*.ipp": "cpp",
+    "*.h": "cpp",
+    "*.hpp": "cpp",
+    "*.c": "c",
+    "*.cpp": "cpp"
+  }
+}

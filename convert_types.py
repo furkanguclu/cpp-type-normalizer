@@ -13,7 +13,7 @@ sorted_map = sorted(type_map.items(), key=lambda x: -len(x[0]))
 patterns = [(re.compile(r'\b' + re.escape(old) + r'\b'), new) for old, new in sorted_map]
 
 def replace_types_in_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
         original_code = f.read()
 
     modified_code = original_code
@@ -37,6 +37,5 @@ def scan_and_replace(directory, extensions=(".c", ".cpp", ".h", ".hpp")):
             if file.endswith(extensions):
                 replace_types_in_file(os.path.join(root, file))
 
-# Script çalıştırıldığında
 if __name__ == "__main__":
     scan_and_replace("src")
